@@ -10,10 +10,19 @@ var moveAmount = 20;
 
 function boxClicked() {
     console.log("Your box has been clicked")
+
+    if (leftMargin < 100) {
+        leftMargin += moveAmount;
+    } else {
+        leftMargin -= moveAmount;
+    }
+
     leftMargin += moveAmount;
     topMargin += moveAmount;
+
     boxes[0].style.marginLeft = leftMargin + "px";
     boxes[0].style.marginTop = topMargin + "px";
+
 }
 
 boxes[0].addEventListener("click", boxClicked)
